@@ -1,0 +1,24 @@
+{
+  "name": "photo.payamd",
+  "version": "1.0.0",
+  "description": "A photo gallery",
+  "main": "service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node service.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/payamdowlatyari/photo.payamd.git"
+  },
+  "author": "Payam Dowlatyari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/payamdowlatyari/photo.payamd/issues"
+  },
+  "homepage": "https://github.com/payamdowlatyari/photo.payamd#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}

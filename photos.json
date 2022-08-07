@@ -1,0 +1,22 @@
+[
+    {
+        "text": "Cat",
+        "url": "photos/cat.jpg"
+    },
+    {
+        "text": "Green Home",
+        "url": "photos/home-green.jpg"
+    },
+    {
+        "text": "Orange",
+        "url": "photos/orange-right.jpg"
+    },
+    {
+        "text": "Red Chair",
+        "url": "photos/red-chair.jpg"
+    },
+    {
+        "text": "Sea Bird",
+        "url": "photos/set-ship-bird.jpg"
+    }
+]
