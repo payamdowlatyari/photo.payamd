@@ -4,7 +4,7 @@ app.use(express.json());
 
 const fs = require('fs');
 const data = fs.readFileSync('photos.json');
-const items = JSON.parse(data);
+const photos = JSON.parse(data);
 
 // To solve the cors issue
 const cors = require('cors');
