@@ -11,6 +11,7 @@ const fetchAppendPhotos = async () => {
 
     const photos = await fetchPhotos();
     const main = document.getElementById('main');
+
     main.before(createNavbar());
     main.append(createMain(photos));
     main.after(createFooter());
@@ -43,26 +44,51 @@ const createNavbar = () => {
     return nav;
 }
 
+const selectPhoto = () => {
+
+    const imgShow = document.createElement('div');
+    imgShow.id = 'img-show';
+
+    const main = document.getElementById('main');
+    const img = document.createElement('img');
+
+    img.addEventListener('click', () => {
+        img.classList.toggle('img-selected');
+        imgShow.append(img);
+        main.before(imgShow);
+    })
+   
+    return img;
+}
 
 const createMain = (photos) => {
 
     const mainDiv = document.createElement('div');
+    mainDiv.classList.add('container-fluid');
+
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('row');
 
     photos.forEach(element => {
+
+        const colDiv = document.createElement('div');
+        colDiv.classList.add('col-sm-6', 'col-md-4', 'col-lg-3');
 
         const photoDiv = document.createElement('div');
         photoDiv.classList.add('photos');
 
-        const img = document.createElement('img');
+        const img = selectPhoto();
         img.classList.add('img-card');
         img.src = element.url;
         img.alt = element.text;
-
-        photoDiv.append(img);
-        mainDiv.append(photoDiv);
         
+        photoDiv.append(img);
+        colDiv.append(photoDiv);
+       rowDiv.append(colDiv);
     });
 
+    
+    mainDiv.append(rowDiv);
     return mainDiv;
 }
 
