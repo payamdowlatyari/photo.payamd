@@ -18,5 +18,81 @@
     {
         "text": "Sea Bird",
         "url": "photos/set-ship-bird.jpg"
+    },
+    {
+        "text": "Leader of Colors",
+        "url": "photos/leader-color.jpg"
+    },
+    {
+        "text": "Minimal Sky",
+        "url": "photos/minimal-leaf.jpg"
+    },
+    {
+        "text": "Behind the Fence",
+        "url": "photos/behind.jpg"
+    },
+    {
+        "text": "Red Wall",
+        "url": "photos/red-wall.jpg"
+    },
+    {
+        "text": "Classic Car",
+        "url": "photos/red-classic.jpg"
+    },
+    {
+        "text": "Graffiti",
+        "url": "photos/graffiti.jpg"
+    },
+    {
+        "text": "Leave and Stones",
+        "url":"photos/barg-sang.jpg"
+    },
+    {
+        "text": "Dirty Leaf",
+        "url": "photos/dirty-leaf.jpg"
+    },
+    {
+        "text": "Houses",
+        "url":"photos/houses.jpg"
+    },
+    {
+        "text": "Landscape",
+        "url": "photos/landscape.jpg"
+    },
+    {
+        "text": "Wall",
+        "url":"photos/wall.jpg"
+    },
+    {
+        "text": "Pomegranate",
+        "url": "photos/pomegranate.jpg"
+    },
+    {
+        "text": "Orange",
+        "url":"photos/orange.jpg"
+    },
+    {
+        "text": "Bridge Houses",
+        "url": "photos/bridge-home.jpg"
+    },
+    {
+        "text": "Bird on Bridge",
+        "url":"photos/bird-bridge.jpg"
+    },
+    {
+        "text": "Green Shadow",
+        "url": "photos/green-shadow.jpg"
+    },
+    {
+        "text": "Green and Shadow",
+        "url":"photos/green5.jpg"
+    },
+    {
+        "text": "Windows",
+        "url": "photos/windows.jpg"
+    },
+    {
+        "text": "Leaf on Ground",
+        "url":"photos/leaf-ground.jpg"
     }
 ]

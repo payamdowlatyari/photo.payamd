@@ -21,8 +21,7 @@ const fetchAppendPhotos = async () => {
 const createNavbar = () => {
 
     const nav = document.createElement('nav');
-    nav.classList.add('navbar');
-    nav.classList.add('sticky-top');
+    nav.classList.add('navbar','sticky-top','bg-sticky');
 
     const container = document.createElement('div');
     container.classList.add('container-fluid');
@@ -44,22 +43,40 @@ const createNavbar = () => {
     return nav;
 }
 
-const selectPhoto = () => {
+const unselect = () => {
 
-    const imgShow = document.createElement('div');
-    imgShow.id = 'img-show';
-
-    const main = document.getElementById('main');
-    const img = document.createElement('img');
-
-    img.addEventListener('click', () => {
-        img.classList.toggle('img-selected');
-        imgShow.append(img);
-        main.before(imgShow);
-    })
-   
-    return img;
+    const photos = document.getElementsByClassName('img-card');
+    
+    for (let i = 0; i < photos.length; i++) {
+        photos[i].classList.add('img-unselected');
+        photos[i].classList.remove('img-selected');
+    }
 }
+
+const photoDisplay = (url, alt) => {
+
+    const imgRow = document.createElement('div');
+    imgRow.classList.add('row','sticky-top','bg-sticky');
+
+    const imgSlide = document.createElement('div');
+    imgSlide.classList.add('img-container', 'col-12');
+
+    const imgItem = document.createElement('img');
+    imgItem.classList.add('img-show');
+
+    imgItem.src = url;
+    imgItem.alt = alt;
+
+    imgSlide.appendChild(imgItem);
+    imgRow.appendChild(imgSlide);
+
+    imgSlide.addEventListener('click',()=>{
+        imgSlide.removeChild(imgItem);
+    });
+    
+    return imgRow;
+}
+
 
 const createMain = (photos) => {
 
@@ -69,26 +86,50 @@ const createMain = (photos) => {
     const rowDiv = document.createElement('div');
     rowDiv.classList.add('row');
 
+   
+   let selectUrl = photos[0].url;
+   let selectAlt = photos[0].alt;
+
+   let selectPhoto = photoDisplay(selectUrl, selectAlt); 
+   
     photos.forEach(element => {
 
         const colDiv = document.createElement('div');
-        colDiv.classList.add('col-sm-6', 'col-md-4', 'col-lg-3');
+        colDiv.classList.add('col-sm-3', 'col-md-3', 'col-lg-2');
+
 
         const photoDiv = document.createElement('div');
         photoDiv.classList.add('photos');
 
-        const img = selectPhoto();
-        img.classList.add('img-card');
+        const img = document.createElement('img');
+
         img.src = element.url;
         img.alt = element.text;
-        
+
+        img.classList.add('img-card');
+
+
+        img.addEventListener('click', () => {
+            
+            unselect();
+            img.classList.add('img-selected');
+            mainDiv.removeChild(selectPhoto);
+
+            selectUrl = element.url;
+            selectAlt = element.text;  
+            selectPhoto = photoDisplay(selectUrl, selectAlt); 
+
+            mainDiv.appendChild(selectPhoto);   
+            mainDiv.appendChild(rowDiv);      
+        });
+
         photoDiv.append(img);
         colDiv.append(photoDiv);
        rowDiv.append(colDiv);
     });
+    mainDiv.appendChild(selectPhoto);
+    mainDiv.appendChild(rowDiv);
 
-    
-    mainDiv.append(rowDiv);
     return mainDiv;
 }
 
