@@ -1,7 +1,7 @@
 [
     {
         "text": "Cat",
-        "url": "photos/cat.JPG"
+        "url": "photos/cat-color.JPG"
     },
     {
         "text": "Green Home",
@@ -49,7 +49,7 @@
     },
     {
         "text": "Dirty Leaf",
-        "url": "photos/dirty-leaf.JPG"
+        "url": "photos/dirty-leaves.JPG"
     },
     {
         "text": "Houses",
@@ -61,7 +61,7 @@
     },
     {
         "text": "Wall",
-        "url":"photos/wall.JPG"
+        "url":"photos/wall-color.JPG"
     },
     {
         "text": "Pomegranate",
@@ -69,7 +69,7 @@
     },
     {
         "text": "Orange",
-        "url":"photos/orange.JPG"
+        "url":"photos/half-orange.JPG"
     },
     {
         "text": "Bridge Houses",
