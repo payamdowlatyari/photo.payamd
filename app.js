@@ -72,7 +72,10 @@ const photoDisplay = (url, alt) => {
     imgRow.appendChild(imgSlide);
 
     imgSlide.addEventListener('click',()=>{
-        imgSlide.removeChild(imgItem);
+        imgSlide.classList.add('delay-1s');
+        setTimeout(() => {
+            imgSlide.removeChild(imgItem);
+        },500)
     });
     
     return imgRow;

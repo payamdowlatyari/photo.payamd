@@ -1,5 +1,5 @@
 body{
-    background-color: #F2F3F4;
+    background-color: #17202A;
     height: 100vh;
 }
 
@@ -39,24 +39,24 @@ img {
 
 .img-card{
    width: 100%;
-   transform: scale(1);
    position: relative;
+   /* opacity: 0.95; */
 }
 
 .img-card:hover {
     transition: 0.5s;
-    opacity: 0.9;
+    filter: contrast(110%) brightness(110%);
 }
 
 @keyframes cont-anim {
 	0% {
 		opacity: 0;
-		transform: scale(0.75);
+		transform: translateY(-250px);
 	}
 
 	100% {
 		opacity: 1;
-		transform: scale(1);
+		transform: translateY(0);
 	}
 }
 
@@ -76,7 +76,23 @@ img {
 }
 
 .img-selected{
-    border: 2px solid #2E86C1;
+    border: 1px solid #F2F3F4;
+}
+
+.delay-1s {
+    animation: fade-out 1s ease 0s 1 normal forwards;
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-250px);
+	}
 }
 
 .navbar {
@@ -93,7 +109,7 @@ img {
      font-weight: 700;
      text-transform: uppercase;
  }
- 
+
  .navbar a:hover {
      opacity: 1;
      transition: 0.3s;
@@ -105,6 +121,7 @@ img {
     color: #999;
     text-align: center;
     position: static;
+    padding: 1em;
     bottom: 0;
     left: 0;
     right: 0;
@@ -113,7 +130,7 @@ img {
 .footer a{
     color: #2E86C1;
     text-decoration: none;
-    opacity: 0.7;
+    opacity: 0.75;
 } 
 
 .footer a:hover {
