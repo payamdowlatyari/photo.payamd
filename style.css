@@ -21,6 +21,7 @@ img {
     align-items: center;
     width: 100%;
     z-index: 100;
+    border-radius: 5px;
 }
 
 .row {
@@ -40,7 +41,6 @@ img {
 .img-card{
    width: 100%;
    position: relative;
-   /* opacity: 0.95; */
 }
 
 .img-card:hover {
@@ -82,6 +82,23 @@ img {
 .delay-1s {
     animation: fade-out 1s ease 0s 1 normal forwards;
 }
+
+.close-btn {
+    color: #F2F3F4;
+    background-color: #17202A;
+    border: none;
+    border-radius: 3px;
+    opacity: 0.75;
+    display: inline; 
+    position: absolute;
+}
+
+.top-right {
+    position: absolute;
+    top: 5px;
+    right: 45px;
+    z-index: 1500;
+  }
 
 @keyframes fade-out {
 	0% {
@@ -139,7 +156,5 @@ img {
 }
 
 @media(max-width: 575px){
-
     .img-container{ display: none;}
-
 }

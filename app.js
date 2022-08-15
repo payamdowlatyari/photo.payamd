@@ -27,22 +27,26 @@ const createNavbar = () => {
     const container = document.createElement('div');
     container.classList.add('container-fluid');
 
-    const brand = document.createElement('a');
-    brand.href = 'https://www.payamd.com/';
-    brand.innerHTML = '<i class="bi bi-house-fill"></i>';
-
     const title = document.createElement('a');
     title.href = '#';
  
     title.classList.add('main-title');
     title.text = 'Photography as a Second Language';
 
-    container.append(brand);
     container.append(title);
     nav.append(container);
 
     return nav;
 }
+
+const closeBtn = () => {
+
+    const btn = document.createElement('button');
+        btn.innerHTML = '<i class="bi bi-x"></i>';
+        btn.classList.add('close-btn');
+    return btn;
+}
+
 
 const unselect = () => {
 
@@ -68,14 +72,23 @@ const photoDisplay = (url, alt) => {
     imgItem.src = url;
     imgItem.alt = alt;
 
+    const closeItem = document.createElement('div');
+    closeItem.classList.add('top-right');
+
+    const close = closeBtn();
+    
+    closeItem.appendChild(close);
+
     imgSlide.appendChild(imgItem);
+    imgSlide.appendChild(closeItem);
+
     imgRow.appendChild(imgSlide);
 
-    imgSlide.addEventListener('click',()=>{
+    closeItem.addEventListener('click',()=>{
         imgSlide.classList.add('delay-1s');
         setTimeout(() => {
             imgSlide.removeChild(imgItem);
-        },500)
+        },600)
     });
     
     return imgRow;
