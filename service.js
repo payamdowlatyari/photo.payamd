@@ -3,8 +3,14 @@ const app = express();
 app.use(express.json());
 
 const fs = require('fs');
+
+// read photos.json
 const data = fs.readFileSync('photos.json');
 const photos = JSON.parse(data);
+
+// read texts.json
+const data2 = fs.readFileSync('texts.json');
+const texts = JSON.parse(data2);
 
 // To solve the cors issue
 const cors = require('cors');
@@ -19,9 +25,14 @@ app.use(function(req, res, next) {
     next();
 });
 
-// GET request
+// GET request 1
 app.get('/api/photos', (req, res) => {
     res.send(photos);
+});
+
+// GET request 2
+app.get('/api/texts', (req, res) => {
+    res.send(texts);
 });
 
 //PORT ENVIRONMENT VARIABLE

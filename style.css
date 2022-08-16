@@ -79,9 +79,7 @@ img {
     border: 1px solid #F2F3F4;
 }
 
-.delay-1s {
-    animation: fade-out 1s ease 0s 1 normal forwards;
-}
+
 
 .close-btn {
     color: #F2F3F4;
@@ -93,6 +91,14 @@ img {
     position: absolute;
 }
 
+.overlay .close-btn {
+    opacity: 1;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    transform: scale(1.5);
+}
+
 .top-right {
     position: absolute;
     top: 5px;
@@ -100,6 +106,45 @@ img {
     z-index: 1500;
   }
 
+  @keyframes overlay-m {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0)
+	}
+}
+
+.overlay {
+    animation: overlay-m 1s ease 0s 1 normal forwards;
+    height: 100vh;
+    width: 100%;
+    position: fixed; 
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    background-color: #17202A;
+    display: block;
+  }
+  
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%; 
+    text-align: center; 
+    margin-top: 30px; 
+    color: #F2F3F4;
+  }
+
+.hamburger-menu{
+    color: #17202A;
+    transform: scale(2);
+    padding-bottom: 3px;
+    cursor: pointer;
+}
 @keyframes fade-out {
 	0% {
 		opacity: 1;
@@ -112,6 +157,29 @@ img {
 	}
 }
 
+.delay-1s {
+    animation: fade-out 1s ease 0s 1 normal forwards;
+}
+
+.about-container {
+    padding: 1em;
+    margin: 0 auto;
+    font-size: 0.75em;
+    max-width: 500px;
+}
+
+.about-container h2 {
+    font-size: medium;
+    font-weight: 700;
+    padding-top: 0.75em;
+    padding-bottom: 0.25em;
+    text-transform: uppercase;
+}
+
+.me-img {
+    width: 250px;
+}
+
 .navbar {
     height: max-content;
     padding: 5px;
@@ -121,7 +189,7 @@ img {
  
  .navbar a {
      color: #17202A;
-     opacity: 0.9;
+     opacity: 0.8;
      text-decoration: none;
      font-weight: 700;
      text-transform: uppercase;
@@ -129,7 +197,7 @@ img {
 
  .navbar a:hover {
      opacity: 1;
-     transition: 0.3s;
+     transition: 0.4s;
  }
 
 

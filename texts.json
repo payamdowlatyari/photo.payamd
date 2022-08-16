@@ -1,0 +1,19 @@
+[
+    {
+        "title": "PHOTOGRAPHY AS A SECOND LANGUAGE",
+        "about": "Photography has been my passion since I was very young. I shot my first photos when I was a teenager with an analog Canon AV1 film camera. I worked as a journalist photographer for a few months when I was around 18. Later I decided to take photos almost every day as a hobby. I currently shoot with a Canon DSLR 70D and a collection of different lenses as follows: Canon wide 10-18mm F4/5.6, prime 50mm F1.8, prime wide 24mm F2.8, zoom 18-135mm F3.5/5.6, and zoom 75-300mm F4/5.6. I am interested in different genres and styles, but my favorite ones are street, low-light, minimalist, and black and white photography.",
+        "imgUrl": "/me-colored.JPG",
+        "email": "photo@payamd.com",
+        "phone": "1 916 547 8918",
+        "social" : {
+            "linkedIn": "",
+            "Instagram": "",
+            "Facebook": "",
+            "Twiter": ""
+        },
+        "homeUrl": "https://www.payamd.com/",
+        "homeIcon": "<i class='bi bi-house-fill'></i>",
+        "name": "Payam Dowlatyari",
+        "logo": "/payamd.png" 
+    }
+]

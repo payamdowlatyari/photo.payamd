@@ -2,7 +2,6 @@
 const baseURI = 'https://photo-payamd.herokuapp.com/api';
 
 const fetchPhotos = async() => {
-
     const res = await fetch(`${baseURI}/photos`);
     const photos = await res.json();
     return photos;
@@ -11,18 +10,77 @@ const fetchPhotos = async() => {
 const fetchAppendPhotos = async () => {
 
     const photos = await fetchPhotos();
+    const items = await fetchTexts();
+
     const main = document.getElementById('main');
 
-    main.before(createNavbar());
+    main.before(createNavbar(items));
     main.append(createMain(photos));
     main.after(createFooter());
 }
 
+const fetchTexts = async() => {
+    const res = await fetch(`${baseURI}/texts`);
+    const texts = await res.json();
+    return texts;
+}
 
-const createNavbar = () => {
+const about = (items) => {
+
+    const aboutDiv = document.createElement('div');
+    aboutDiv.classList.add('about-container');
+
+    const title = document.createElement('h2');
+    title.textContent = items[0].title;
+
+    const aboutContent = document.createElement('p');
+    aboutContent.textContent = items[0].about;
+
+    const name = document.createElement('h2');
+    name.textContent = items[0].name;
+
+    const meImg = document.createElement('img');
+    meImg.classList.add('me-img');
+    meImg.src = items[0].imgUrl;
+
+    aboutDiv.appendChild(title);
+    aboutDiv.appendChild(aboutContent);
+    
+    aboutDiv.appendChild(meImg);
+    aboutDiv.appendChild(name);
+
+    return aboutDiv;
+}
+
+const overlayMenu = (items) => {
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+
+    const overlayContent = document.createElement('div');
+    overlayContent.classList.add('overlay-content');
+
+    overlayContent.appendChild(about(items))
+
+    const close = closeBtn();
+
+    overlay.appendChild(close);
+    overlay.appendChild(overlayContent);
+
+    close.addEventListener('click', () => {
+        overlay.classList.add('delay-1s');
+        setTimeout(() => {
+            document.getElementById('navId').removeChild(overlay);
+        },1000)
+    });
+
+    return overlay;
+}
+
+const createNavbar = (items) => {
 
     const nav = document.createElement('nav');
     nav.classList.add('navbar','sticky-top','bg-sticky');
+    nav.id = 'navId';
 
     const container = document.createElement('div');
     container.classList.add('container-fluid');
@@ -31,9 +89,18 @@ const createNavbar = () => {
     title.href = '#';
  
     title.classList.add('main-title');
-    title.text = 'Photography as a Second Language';
+    title.text = 'Photoasl';
+
+    const openMenu = document.createElement('span');
+    openMenu.innerHTML = "&#9776;";
+    openMenu.classList.add('hamburger-menu');
+    
+    openMenu.addEventListener('click', () => { 
+        nav.append(overlayMenu(items));
+    })
 
     container.append(title);
+    container.append(openMenu);
     nav.append(container);
 
     return nav;
