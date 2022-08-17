@@ -43,11 +43,26 @@ const about = (items) => {
     meImg.classList.add('me-img');
     meImg.src = items[0].imgUrl;
 
+    const email = document.createElement('h5');
+    email.textContent = items[0].email;
+
+    const phone = document.createElement('h5');
+    phone.textContent = items[0].phone;
+
+    const home = document.createElement('a');
+    home.id = 'home-link';
+    home.href = items[0].homeUrl;
+    home.text = 'payamd.com';
+    home.target = 'blank';
+
     aboutDiv.appendChild(title);
     aboutDiv.appendChild(aboutContent);
     
     aboutDiv.appendChild(meImg);
     aboutDiv.appendChild(name);
+    aboutDiv.appendChild(email);
+    aboutDiv.appendChild(phone);
+    aboutDiv.appendChild(home);
 
     return aboutDiv;
 }
