@@ -131,13 +131,31 @@ const closeBtn = () => {
 
 
 const unselect = () => {
-
     const photos = document.getElementsByClassName('img-card');
-    
     for (let i = 0; i < photos.length; i++) {
         photos[i].classList.add('img-unselected');
         photos[i].classList.remove('img-selected');
     }
+}
+
+const captionDisplay = (text) => {
+
+    const captionDiv = document.createElement('div');
+    captionDiv.classList.add('bottom-left');
+
+    const caption = document.createElement('p');
+    caption.classList.add('photo-caption');
+
+    caption.textContent = text;
+
+    captionDiv.appendChild(caption);
+
+
+    captionDiv.addEventListener('click', () => {
+        captionDiv.removeChild(caption);
+    });
+
+    return captionDiv;
 }
 
 const photoDisplay = (url, alt) => {
@@ -154,14 +172,19 @@ const photoDisplay = (url, alt) => {
     imgItem.src = url;
     imgItem.alt = alt;
 
+    
+
     const closeItem = document.createElement('div');
-    closeItem.classList.add('top-right');
+    closeItem.classList.add('bottom-right');
 
     const close = closeBtn();
+    const caption = captionDisplay(alt);
     
+   
     closeItem.appendChild(close);
 
     imgSlide.appendChild(imgItem);
+    imgSlide.appendChild(caption);
     imgSlide.appendChild(closeItem);
 
     imgRow.appendChild(imgSlide);
