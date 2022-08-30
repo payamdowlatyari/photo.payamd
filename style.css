@@ -252,6 +252,7 @@ h5 {
     width: auto;
     color: #F2F3F4;
     background-color: #17202A;
+    cursor: pointer;
     position: absolute;
     font-size: 12px;
     text-transform: uppercase;

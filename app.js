@@ -210,7 +210,7 @@ const createMain = (photos) => {
 
    
    let selectUrl = photos[0].url;
-   let selectAlt = photos[0].alt;
+   let selectAlt = photos[0].text;
 
    let selectPhoto = photoDisplay(selectUrl, selectAlt); 
    
