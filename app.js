@@ -166,16 +166,21 @@ const photoDisplay = (url, alt) => {
     const imgSlide = document.createElement('div');
     imgSlide.classList.add('img-container', 'col-12');
 
+    window.onscroll = () => {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) 
+            imgSlide.style.width = '480px';
+        else
+            imgSlide.style.width = '720px';
+    }
+
     const imgItem = document.createElement('img');
     imgItem.classList.add('img-show');
 
     imgItem.src = url;
     imgItem.alt = alt;
 
-    
-
     const closeItem = document.createElement('div');
-    closeItem.classList.add('bottom-right');
+    closeItem.classList.add('top-right');
 
     const close = closeBtn();
     const caption = captionDisplay(alt);
@@ -199,6 +204,15 @@ const photoDisplay = (url, alt) => {
     return imgRow;
 }
 
+// window.onscroll = function() {scrollFunction()};
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+//     document.getElementById("header").style.fontSize = "30px";
+//   } else {
+//     document.getElementById("header").style.fontSize = "90px";
+//   }
+// }
 
 const createMain = (photos) => {
 
