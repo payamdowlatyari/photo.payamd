@@ -1,5 +1,5 @@
 body{
-    background-color: #17202A;
+    background-color: #0b090a;
     height: 100vh;
 }
 
@@ -15,15 +15,16 @@ h5 {
 
 #main{
     margin: 0 auto;
+    min-height: 97vh;
 }
 
 #home-link{
-    color: #AED6F1;
+    color: #fe6d73;
     text-transform: lowercase;
 }
 
 .bg-sticky {
-    background-color: #17202A;
+    background-color: #0b090a;
 }
 
 .img-show {
@@ -46,7 +47,7 @@ h5 {
 }
 
 .col-sm-3 {
-    padding: 0.5em;
+    padding: 0.25em;
 }
 
 .img-card{
@@ -87,12 +88,12 @@ h5 {
 }
 
 .img-selected{
-    border: 1px solid #F2F3F4;
+    border: 1px solid #fafaff;
 }
 
 .close-btn {
-    color: #F2F3F4;
-    background-color: #17202A;
+    color: #fafaff;
+    background-color: #0b090a;
     border: none;
     border-radius: 3px;
     opacity: 0.8;
@@ -134,7 +135,7 @@ h5 {
 	}
 
 	100% {
-		opacity: 0.95;
+		opacity: 0.9;
 		transform: translateY(0)
 	}
 }
@@ -147,9 +148,9 @@ h5 {
     z-index: 2000;
     left: 0;
     top: 0;
-    background-color: #17202A;
+    background-color: #0b090a;
     display: block;
-    opacity: 0.95;
+    opacity: 0.9;
   }
   
 .overlay-content {
@@ -158,11 +159,11 @@ h5 {
     width: 100%; 
     text-align: center; 
     margin-top: 25px; 
-    color: #F2F3F4;
+    color: #fafaff;
   }
 
 .hamburger-menu{
-    color: #17202A;
+    color: #fafaff;
     transform: scale(2);
     padding-bottom: 3px;
     cursor: pointer;
@@ -210,13 +211,13 @@ h5 {
 
 .navbar {
     height: max-content;
-    padding: 5px;
-    background-color: #D5D8DC;
+    padding: 10px;
+    background-color: #0b090a;
     z-index: 1030;
  }
  
  .navbar a {
-     color: #17202A;
+     color: #fafaff;
      opacity: 0.8;
      text-decoration: none;
      font-weight: 700;
@@ -231,10 +232,11 @@ h5 {
 
 .footer {
     font-size: 0.75em;
-    color:#D5D8DC;
+    color:#fafaff;
     text-align: center;
-    position: sticky;
-    background-color: #17202A;
+    /* position: relative; */
+    /* position: sticky; */
+    background-color: #0b090a;
     padding: 0.25em;
     bottom: 0;
     left: 0;
@@ -242,7 +244,7 @@ h5 {
 }
 
 .footer a{
-    color: #AED6F1;
+    color: #fe6d73;
     text-decoration: none;
     opacity: 0.75;
 } 
@@ -258,8 +260,8 @@ h5 {
 
 .photo-caption {
     width: auto;
-    color: #F2F3F4;
-    background-color: #17202A;
+    color: #fafaff;
+    background-color: #0b090a;
     cursor: pointer;
     position: absolute;
     font-size: 12px;

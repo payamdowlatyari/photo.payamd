@@ -1,5 +1,5 @@
-// const baseURI = 'http://localhost:8080/api';
-const baseURI = 'https://photo-payamd.herokuapp.com/api';
+const baseURI = 'http://localhost:8080/api';
+// const baseURI = 'https://photo-payamd.herokuapp.com/api';
 
 const fetchPhotos = async() => {
     const res = await fetch(`${baseURI}/photos`);
@@ -14,7 +14,7 @@ const fetchAppendPhotos = async () => {
 
     const main = document.getElementById('main');
 
-    main.before(createNavbar(items));
+    main.append(createNavbar(items));
     main.append(createMain(photos));
     main.after(createFooter());
 }
@@ -167,10 +167,14 @@ const photoDisplay = (url, alt) => {
     imgSlide.classList.add('img-container', 'col-12');
 
     window.onscroll = () => {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) 
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             imgSlide.style.width = '480px';
-        else
+            imgSlide.style.marginTop = '3em';
+        }
+        else {
             imgSlide.style.width = '720px';
+            imgSlide.style.marginTop = '1em';
+        }
     }
 
     const imgItem = document.createElement('img');
@@ -203,16 +207,6 @@ const photoDisplay = (url, alt) => {
     
     return imgRow;
 }
-
-// window.onscroll = function() {scrollFunction()};
-
-// function scrollFunction() {
-//   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-//     document.getElementById("header").style.fontSize = "30px";
-//   } else {
-//     document.getElementById("header").style.fontSize = "90px";
-//   }
-// }
 
 const createMain = (photos) => {
 
