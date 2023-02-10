@@ -1,5 +1,5 @@
-const baseURI = 'http://localhost:8080/api';
-// const baseURI = 'https://photo-payamd.herokuapp.com/api';
+// const baseURI = 'http://localhost:8080/api';
+const baseURI = 'https://photo-payamd.herokuapp.com/api';
 
 const fetchPhotos = async() => {
     const res = await fetch(`${baseURI}/photos`);
