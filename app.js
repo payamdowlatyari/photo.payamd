@@ -1,5 +1,5 @@
 // const baseURI = 'http://localhost:8080/api';
-const baseURI = 'https://photo-payamd.herokuapp.com/api';
+const baseURI = 'https://photo-payamd.vercel.app/api';
 
 const fetchPhotos = async() => {
     const res = await fetch(`${baseURI}/photos`);
@@ -57,7 +57,6 @@ const about = (items) => {
 
     aboutDiv.appendChild(title);
     aboutDiv.appendChild(aboutContent);
-    
     aboutDiv.appendChild(meImg);
     aboutDiv.appendChild(name);
     aboutDiv.appendChild(email);
@@ -158,13 +157,17 @@ const captionDisplay = (text) => {
     return captionDiv;
 }
 
+
 const photoDisplay = (url, alt) => {
 
     const imgRow = document.createElement('div');
     imgRow.classList.add('row','sticky-top','bg-sticky');
 
     const imgSlide = document.createElement('div');
-    imgSlide.classList.add('img-container', 'col-12');
+    imgSlide.classList.add('img-container', 'col-8');
+
+    const imgMemory = document.createElement('div');
+    imgMemory.classList.add('col-4');
 
     window.onscroll = () => {
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -188,7 +191,6 @@ const photoDisplay = (url, alt) => {
 
     const close = closeBtn();
     const caption = captionDisplay(alt);
-    
    
     closeItem.appendChild(close);
 
@@ -197,6 +199,7 @@ const photoDisplay = (url, alt) => {
     imgSlide.appendChild(closeItem);
 
     imgRow.appendChild(imgSlide);
+    imgRow.appendChild(imgMemory);
 
     closeItem.addEventListener('click',()=>{
         imgSlide.classList.add('delay-1s');
@@ -204,7 +207,6 @@ const photoDisplay = (url, alt) => {
             imgSlide.removeChild(imgItem);
         },600)
     });
-    
     return imgRow;
 }
 
@@ -215,7 +217,6 @@ const createMain = (photos) => {
 
     const rowDiv = document.createElement('div');
     rowDiv.classList.add('row');
-
    
    let selectUrl = photos[0].url;
    let selectAlt = photos[0].text;
@@ -227,7 +228,6 @@ const createMain = (photos) => {
         const colDiv = document.createElement('div');
         colDiv.classList.add('col-sm-3', 'col-md-3', 'col-lg-2');
 
-
         const photoDiv = document.createElement('div');
         photoDiv.classList.add('photos');
 
@@ -237,7 +237,6 @@ const createMain = (photos) => {
         img.alt = element.text;
 
         img.classList.add('img-card');
-
 
         img.addEventListener('click', () => {
             
