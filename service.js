@@ -15,13 +15,13 @@ const texts = JSON.parse(data2);
 // To solve the cors issue
 const cors = require('cors');
 app.use(express.static('public'));
-app.use(cors());
+app.use(cors({origin: "*"}));
 
 app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
+    // res.setHeader('Access-Control-Allow-Origin', '*');
+    // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    // res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    // res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
 
