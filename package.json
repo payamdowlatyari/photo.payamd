@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/payamdowlatyari/photo.payamd/issues"
   },
-  "homepage": "https://github.com/payamdowlatyari/photo.payamd#readme",
+  "homepage": "",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1"
